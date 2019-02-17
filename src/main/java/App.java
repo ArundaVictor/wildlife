@@ -62,7 +62,7 @@ public class App {
     get("/animal/new", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
       model.put("animals", Animal.all());
-      model.put("endangeredAnimals", EndangeredAnimal.all());
+      model.put("endangeredAnimals", Endangered.all());
       model.put("template", "templates/animal-form.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
@@ -74,10 +74,10 @@ public class App {
         String name = request.queryParams("name");
         String health = request.queryParams("health");
         String age = request.queryParams("age");
-        EndangeredAnimal endangeredAnimal = new EndangeredAnimal(name, health, age);
+        Endangered endangeredAnimal = new Endangered(name, health, age);
         endangeredAnimal.save();
         model.put("animals", Animal.all());
-        model.put("endangeredAnimals", EndangeredAnimal.all());
+        model.put("endangeredAnimals", Endangered.all());
       } else {
         String name = request.queryParams("name");
         Animal animal = new Animal(name);
