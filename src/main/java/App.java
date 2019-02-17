@@ -83,7 +83,7 @@ public class App {
         Animal animal = new Animal(name);
         animal.save();
         model.put("animals", Animal.all());
-        model.put("endangeredAnimals", EndangeredAnimal.all());
+        model.put("endangeredAnimals", Endangered.all());
       }
       response.redirect("/");
         return null;
@@ -99,7 +99,7 @@ public class App {
 
     get("/endangered_animal/:id", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
-      EndangeredAnimal endangeredAnimal = EndangeredAnimal.find(Integer.parseInt(request.params("id")));
+      Endangered endangeredAnimal = Endangered.find(Integer.parseInt(request.params("id")));
       model.put("endangeredAnimal", endangeredAnimal);
       model.put("template", "templates/endangered_animal.vtl");
       return new ModelAndView(model, layout);
