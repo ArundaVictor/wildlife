@@ -1,5 +1,7 @@
-import java.util.HashMap;
 import java.util.Map;
+import java.util.HashMap;
+import java.util.List;
+import java.util.ArrayList;
 import spark.ModelAndView;
 import spark.template.velocity.VelocityTemplateEngine;
 import static spark.Spark.*;
@@ -26,6 +28,16 @@ public class App {
       model.put("endangeredAnimals", Endangered.all());
       model.put("sightings", Sighting.all());
       model.put("template", "templates/index.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
+
+         get("/sightings", (request, response) -> {
+      Map<String, Object> model = new HashMap<String, Object>();
+      model.put("animals", Animal.all());
+      model.put("endangeredAnimals", Endangered.all());
+      model.put("sightings", Sighting.all());
+      model.put("template", "templates/sightings.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
@@ -101,7 +113,7 @@ public class App {
       Map<String, Object> model = new HashMap<String, Object>();
       Endangered endangeredAnimal = Endangered.find(Integer.parseInt(request.params("id")));
       model.put("endangeredAnimal", endangeredAnimal);
-      model.put("template", "templates/endangered_animal.vtl");
+      model.put("template", "templates/endangered-animal.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
