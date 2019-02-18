@@ -1,28 +1,31 @@
 
-<h1>Add Animal to Database</h1>
+<h1>Add Animal to the System</h1>
 
 <form action="/animal/new" method="post">
   <label>Animal Species</label>
-  <input type="text" name="name">
-  <label>Endangered?</label>
+  <input type="text" name="name" class="form-control">
+  <label>Is the animal endangered?</label>
   <input type="checkbox" name="endangered">
 
-  <h3>Additional Info for Endangered Animals:</h3>
+  <h3>Please enter additional information for the endangered animal</h3>
 
-  <label>Health</label>
+  <label>Health: Select from these options</label>
+  <br>
   <select name="health">
     <option>Ill</option>
     <option>Okay</option>
     <option>Healthy</option>
   </select>
 
-  <label>Age</label>
+  <label>Age: select from these options</label>
+  <br>
   <select name="age">
     <option>Newborn</option>
     <option>Young</option>
     <option>Adult</option>
   </select>
+  <br>
 
-  <button type="submit">Add Animal</button>
+  <button type="submit" class="btn btn-primary">Add Animal</button>
   
 </form>

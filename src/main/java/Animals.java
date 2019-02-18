@@ -1,11 +1,7 @@
-public class Animal {
+public abstract class Animals {
   public String name;
   public int id;
 
-  public Animal(String name) {
-    this.name = name;
-    this.id = id;
-  }
 
   public String getName() {
     return name;
@@ -14,3 +10,4 @@ public class Animal {
   public int getId() {
     return id;
   }
+}

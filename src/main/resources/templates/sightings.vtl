@@ -11,30 +11,34 @@
     <br>
 
     <label>Location</label>
-    <input type="text" name="latLong">
-    <label>Your Name</label>
-    <input type="text" name="rangerName">
-    <button type="submit">Submit Report</button>
+    <input type="text" name="location" class="form-control">
+    <br>
+    <label>Ranger Name</label>
+    <input type="text" name="rangerName" class="form-control">
+    <br>
+    <button type="submit" class=btn btn-primary>Submit Report</button>
   #end
 </form>
-
-<hr>
+<br>
 
 <h3> Report Endangered Animal Sighting </h3>
 <form action="/endangered_sighting" method="post">
   #if($endangeredAnimals.size() >= 0)
-    <label>Select Endangered Animal</label>
+    <label>Select an Endangered Animal</label>
     <select name="endangeredAnimalSelected">
       #foreach($endangered_animal in $endangeredAnimals)
         <option value="$endangered_animal.getId()">$endangered_animal.getName()</option>
       #end
     </select>
+    <br>
 
     <label>Location</label>
-    <input type="text" name="latLong">
+    <input type="text" name="location" class="form-control">
+    <br>
     <label>Your Name</label>
-    <input type="text" name="rangerName">
-    <button type="submit">Submit Report</button>
+    <input type="text" name="rangerName" class="form-control">
+    <br>
+    <button type="submit" class="btn btn-primary">Submit Report</button>
   #end
 </form>
 
@@ -42,7 +46,8 @@
 <h3>Endangered Animal Sightings</h3>
 
 #if ($endangeredAnimals.size() == 0)
-  <a href="/animal/new">Add Animal to Database to Report a Sighting</a>
+<p> You can add an animal to the system here so as to report a sighting.</p>
+  <a href="/animal/new">Add animal</a>
 #else
   #foreach ($endangeredAnimal in $endangeredAnimals)
     <a href="/endangered_animal/$endangeredAnimal.getId()" class="thumbnail">
@@ -52,10 +57,11 @@
     </a>
   #end
 #end
+<br>
 
 <h3>All Animals & Sightings</h3>
 #if ($animals.size() == 0)
-  <a href="/animal/new">Add Animal to Database to Report a Sighting</a>
+  <a href="/animal/new">Add an animal to system to Report a Sighting</a>
 #else
   #foreach ($animal in $animals)
     <a href="/animal/$animal.getId()" class="thumbnail">
