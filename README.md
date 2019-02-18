@@ -1,12 +1,12 @@
-# HAIR SALON
+# WILDLIFE TRACKER
 
-This is a java application where an owner of a salon can add stylists to their shop and assign clients to the stylists.
+This is a java application used to track wildlife sightings in an area.
 
 #### By **Arunda Victor Oyugi**
 
 ## Description
 
- The hair salon application allows a user to add a stylist and assign a client to a specific stylist of choice. The application also allows the user to update or delete both the client's and the stylist's information.
+ The application allows rangers to track wildlife sightings in an area. The user can add an animal to the system and report its sighting by providing details such as location, health and age. The animals added can eithr be endangered or not endangered. 
 
 ## Setup/Installation Requirements
 1. Clone the repository.
@@ -16,20 +16,21 @@ This is a java application where an owner of a salon can add stylists to their s
 
 #### To re-create the database, follow these steps;
 In PSQL:
-1. CREATE DATABASE hair_salon;
-2. CREATE TABLE clients (id serial PRIMARY KEY, name varchar, stylistId int);
-3. CREATE TABLE stylists (id serial PRIMARY KEY, name varchar);
+* CREATE DATABASE wildlife_tracker;
+* \c wildlife_tracker;
+* CREATE TABLE animals (id serial PRIMARY KEY, name varchar);
+* CREATE TABLE endangered_animals (id serial PRIMARY KEY, name varchar, health varchar, age varchar);
+* CREATE TABLE sightings (id serial PRIMARY KEY, animal_id int, location varchar, ranger_name varchar);
+* CREATE DATABASE wildlife_tracker_test WITH TEMPLATE wildlife_tracker;
 
 ## Behaviour driven Development (BDD)
 |#User inputs   |  #Example outputs |         
 |---------------|-------------------|
 |When it receives:               | It should return:                  |
-| User adds a stylist             | A stylist is added                |
-| User adds a client to a stylist             | The client is assigned a particular stylist |
-| User updates client's information             | The client's information is updated  |
-| User deletes a client's information             | The client's information is deleted |
-| User updates stylist's information             | The stylist's information is updated  |
-| User deletes a stylist's information             | The stylist's information is deleted |
+| User adds an animal             | An animal is added                |
+| User adds an endangered animal             | An enedangered animal is added |
+| User reports an animal sighting            | Animal sighting is reported  |
+
 
 
 ## Known Bugs
