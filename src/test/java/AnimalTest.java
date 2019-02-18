@@ -70,9 +70,4 @@ public class AnimalTest {
     assertEquals("Buck", testAnimal.getName());
   }
 
-  @Test
-  public void find_returnsNullWhenNoAnimalFound_null() {
-    assertTrue(Animal.find(999) == null);
-  }
-
 }
