@@ -1,8 +1,8 @@
-
+<div class = "well">
 <h1>Add Animal to the System</h1>
 
 <form action="/animal/new" method="post">
-  <label>Animal Species</label>
+  <label>Enter animal name</label>
   <input type="text" name="name" class="form-control">
   <label>Is the animal endangered?</label>
   <input type="checkbox" name="endangered">
@@ -12,9 +12,9 @@
   <label>Health: Select from these options</label>
   <br>
   <select name="health">
-    <option>Ill</option>
-    <option>Okay</option>
     <option>Healthy</option>
+        <option>Okay</option>
+        <option>Ill</option>
   </select>
   <br>
   <br>
@@ -33,3 +33,4 @@
   <button type="submit" class="btn btn-primary">Add Animal</button>
   
 </form>
+</div>

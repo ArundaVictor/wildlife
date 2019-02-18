@@ -1,12 +1,25 @@
-custom-select {
+.custom-select {
   position: relative;
   font-family: Arial;
 }
 
-.custom-select select {
-  display: none;
+.select-selected {
+  background-color: green;
 }
 
-.select-selected {
-  background-color: DodgerBlue;
+.select-items div,.select-selected {
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+}
+
+body{
+  background: linear-gradient(to right, #ada996, #f2f2f2, #dbdbdb, #eaeaea); 
+  font-size: 15px;
+ }
+
+ h1{
+	text-align: center;
 }

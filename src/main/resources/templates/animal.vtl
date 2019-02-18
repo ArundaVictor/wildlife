@@ -1,16 +1,20 @@
-
+<div class = "well">
 <h1>$animal.getName()</h1>
-<h3>ID: $animal.getId()</h3>
+<h4>Animal ID: $animal.getId()</h4>
 
 #if($animal.getSightings().size() == 0)
   <p>Click here to report a sighting <a href="/sightings">Sightings</a>.</p>
 #else
   #foreach($sighting in $animal.getSightings())
   <br>
-    Location: $sighting.getLocation()
+  <br>
+    Location: <strong>$sighting.getLocation()</strong>
     <br>
-    Reported by: $sighting.getRangerName()
     <br>
-    ID: $sighting.getId()
+    Reported by: <strong>$sighting.getRangerName()</strong>
+    <br>
+    <br>
+    Ranger budge number: <strong>$sighting.getId()</strong>
   #end
 #end
+</div>
